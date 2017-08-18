@@ -97,6 +97,5 @@ if(defined($ARGV[1]) && defined($ARGV[2])){
 }else{
 	$dir = '/var/www/html/TempleOS/Videos';
 	$url = "http://templeos.org/Videos";
-	$dir = ".";
 }
 &scraper($dir,$url);;
