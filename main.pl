@@ -40,6 +40,8 @@ sub scraper(){
 	$workingnode = $nodes[0]->findvalue( 'pre');
 
 	# Parse lines to get file sizes
+	# this regex could be simplified but it allows easy grabbing of more
+	# data if anyone ever customises this script
 	while($workingnode =~ s/(.+)\s+\d\d-\w{3}-\d{4} \d\d:\d\d\s+(\S+)//){
 
 		#we must use href or we can't see long file names
@@ -83,7 +85,7 @@ sub scraper(){
 			}
 		}
 		unless($skip){
-			system"axel $url/$file";
+			`axel $url/$file`;
 		}
 	}
 }
